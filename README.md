@@ -20,8 +20,6 @@ We will use <a href="https://libreswan.org/" target="_blank">Libreswan</a> as th
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
-  - [Ubuntu & Debian](#ubuntu--debian)
-  - [CentOS & RHEL](#centos--rhel)
 - [Next steps](#next-steps)
 - [Important notes](#important-notes)
 - [Upgrade Libreswan](#upgrade-libreswan)
@@ -117,13 +115,13 @@ Get your computer or device to use the VPN. Please refer to:
 
 <a href="docs/ikev2-howto.md" target="_blank">How To: IKEv2 VPN for Windows 7 and newer</a>
 
+If you get an error when trying to connect, see <a href="docs/clients.md#troubleshooting" target="_blank">Troubleshooting</a>.
+
 Enjoy your very own VPN! :sparkles::tada::rocket::sparkles:
 
 ## Important notes
 
-**Windows and Android 6.0/7.0 users**: If you get an error when trying to connect, see <a href="docs/clients.md#troubleshooting" target="_blank">Troubleshooting</a>.
-
-If you wish to add, edit or remove VPN user accounts, refer to <a href="docs/manage-users.md" target="_blank">Manage VPN Users</a>.
+**Windows and Android users**: If you get an error when trying to connect, see <a href="docs/clients.md#troubleshooting" target="_blank">Troubleshooting</a>.
 
 The same VPN account can be used by your multiple devices. However, due to a limitation of the IPsec protocol, if these devices are behind the same NAT (e.g. home router), they cannot simultaneously connect to the VPN server.
 
@@ -132,6 +130,8 @@ Clients are set to use <a href="https://developers.google.com/speed/public-dns/"
 For servers with an external firewall (e.g. <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html" target="_blank">EC2</a>/<a href="https://cloud.google.com/compute/docs/networking#firewalls" target="_blank">GCE</a>), open UDP ports 500 & 4500, and TCP port 22 (for SSH).
 
 To open additional ports on the server, edit `/etc/iptables.rules` and/or `/etc/iptables/rules.v4` (Ubuntu/Debian), or `/etc/sysconfig/iptables` (CentOS). Then reboot your server.
+
+If you wish to add, edit or remove VPN user accounts, refer to <a href="docs/manage-users.md" target="_blank">Manage VPN Users</a>.
 
 When connecting via `IPsec/L2TP`, the VPN server has IP `192.168.42.1` within the VPN subnet `192.168.42.0/24`.
 
